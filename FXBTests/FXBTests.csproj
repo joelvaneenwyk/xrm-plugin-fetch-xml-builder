@@ -103,9 +103,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FetchXmlBuilder\FetchXMLBuilder.csproj">
+    <ProjectReference Include="..\FetchXmlBuilder\FetchXmlBuilder.csproj">
       <Project>{d746cbe7-7787-47fc-b773-f089a44df8c9}</Project>
-      <Name>FetchXMLBuilder</Name>
+      <Name>FetchXmlBuilder</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="..\MarkMpn.XmlSchemaAutocomplete\MarkMpn.XmlSchemaAutoComplete\MarkMpn.XmlSchemaAutoComplete.projitems" Label="Shared" />
