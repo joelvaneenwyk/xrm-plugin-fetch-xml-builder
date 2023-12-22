@@ -4,7 +4,7 @@
 	branch = main
 [submodule "Rappen.XTB.Helper"]
 	path = Rappen.XTB.Helper
-	url = git@github.com:joelvaneenwyk/Rappen.XTB.Helper
+	url = git@github.com:joelvaneenwyk/Rappen.XTB.Helper.git
 	branch = main
 [submodule "MarkMpn.XmlSchemaAutoComplete"]
 	path = MarkMpn.XmlSchemaAutoComplete
