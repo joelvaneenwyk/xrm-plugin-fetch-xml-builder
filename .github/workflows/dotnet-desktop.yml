@@ -79,6 +79,6 @@ jobs:
           vs-version: "[17,18)"
 
       - name: Build
-        run: msbuild $env:Solution_Name -restore:True -property:Configuration=$env:Configuration -build
+        run: msbuild $env:Solution_Name -restore:True -property:Configuration=$env:Configuration
         env:
           Configuration: ${{ matrix.configuration }}
