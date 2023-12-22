@@ -73,7 +73,7 @@ jobs:
           dotnet-version: 6.0.x
 
       - name: Setup MSBuild
-        uses: microsoft/setup-msbuild@latest
+        uses: microsoft/setup-msbuild@v1.1
 
       - name: Restore Packages
         run: msbuild $env:Solution_Name -property:Configuration=$env:Configuration -targets:Restore -restore
