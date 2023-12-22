@@ -40,13 +40,14 @@ name: Build Solution
 
 on:
   push:
-    branches: ["main", "develop"]
+    branches: [main, develop]
   pull_request:
-    branches: ["main", "develop"]
+    branches: [main, develop]
 
 jobs:
   build:
     strategy:
+      fail-fast: false
       matrix:
         configuration: [Debug, Release]
 
@@ -55,10 +56,8 @@ jobs:
       # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
 
     env:
-      Solution_Name: FetchXmlBuilder.sln # Replace with your solution name, i.e. MyWpfApp.sln.
-      # Test_Project_Path: your-test-project-path                 # Replace with the path to your test project, i.e. MyWpfApp.Tests\MyWpfApp.Tests.csproj.
-      # Wap_Project_Directory: your-wap-project-directory-name    # Replace with the Wap project directory relative to the solution, i.e. MyWpfApp.Package.
-      # Wap_Project_Path: your-wap-project-path                   # Replace with the path to your Wap project, i.e. MyWpf.App.Package\MyWpfApp.Package.wapproj.
+      Solution_Name: FetchXmlBuilder.sln
+      Test_Project_Path: Plugins/FetchXmlBuilder/FXBTests/FXBTests.csproj
 
     steps:
       - name: Checkout
@@ -74,14 +73,14 @@ jobs:
           dotnet-version: 6.0.x
 
       - name: Setup MSBuild
-        uses: microsoft/setup-msbuild@v1.3.1
+        uses: microsoft/setup-msbuild@latest
 
       - name: Restore Packages
-        run: msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration
+        run: msbuild $env:Solution_Name -property:Configuration=$env:Configuration -targets:Restore -restore
         env:
           Configuration: ${{ matrix.configuration }}
 
       - name: Build
-        run: msbuild $env:Solution_Name /t:Build /p:Configuration=$env:Configuration
+        run: msbuild $env:Solution_Name -property:Configuration=$env:Configuration -build
         env:
           Configuration: ${{ matrix.configuration }}
