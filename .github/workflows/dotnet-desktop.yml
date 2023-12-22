@@ -75,12 +75,7 @@ jobs:
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v1.1
 
-      - name: Restore Packages
-        run: msbuild $env:Solution_Name -property:Configuration=$env:Configuration -restore
-        env:
-          Configuration: ${{ matrix.configuration }}
-
       - name: Build
-        run: msbuild $env:Solution_Name -property:Configuration=$env:Configuration -build
+        run: msbuild $env:Solution_Name -property:Configuration=$env:Configuration -restore -build
         env:
           Configuration: ${{ matrix.configuration }}
