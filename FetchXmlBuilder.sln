@@ -7,10 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FetchXMLBuilder", "FetchXml
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".Solution", ".Solution", "{13AB47EF-2E67-4179-876C-88816794849B}"
 	ProjectSection(SolutionItems) = preProject
+		FetchXMLBuilder.nuspec = FetchXMLBuilder.nuspec
 		.gitignore = .gitignore
 		.gitmodules = .gitmodules
 		codealike.json = codealike.json
-		FetchXMLBuilder.nuspec = FetchXMLBuilder.nuspec
 		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection

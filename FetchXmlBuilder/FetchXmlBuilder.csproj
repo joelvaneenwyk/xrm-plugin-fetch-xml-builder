@@ -88,7 +88,7 @@
     <Compile Update="FXBQueries.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="FetchXmlBuilder.cs">
+    <Compile Update="FetchXMLBuilder.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Resources\fetch.cs">
