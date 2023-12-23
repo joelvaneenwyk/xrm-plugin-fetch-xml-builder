@@ -276,7 +276,7 @@ namespace Rappen.XTB.FetchXmlBuilder.DockControls
                         "Would you like to submit an issue to FetchXML Builder to be able to handle this?",
                         "Decode " + Text, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                     {
-                        FetchXmlBuilder.OpenURL("https://github.com/rappen/FetchXMLBuilder/issues/new");
+                        FetchXmlBuilder.OpenURL("https://github.com/rappen/FetchXmlBuilder/issues/new");
                     }
                     return;
                 }
@@ -861,7 +861,7 @@ namespace Rappen.XTB.FetchXmlBuilder.DockControls
 
             //More votes == released sooner.", "QueryExpressionFactory",
             //                    MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, 0,
-            //                    "https://github.com/rappen/FetchXMLBuilder/issues/822");
+            //                    "https://github.com/rappen/FetchXmlBuilder/issues/822");
             //                if (fxb.settings.CodeGenerators.Style == CodeGenerationStyle.EarlyBoundEBG)
             //                {
             //                    rbQExEarly.Checked = true;
@@ -889,7 +889,7 @@ namespace Rappen.XTB.FetchXmlBuilder.DockControls
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FetchXmlBuilder.OpenURL("https://github.com/rappen/FetchXMLBuilder/issues/822");
+            FetchXmlBuilder.OpenURL("https://github.com/rappen/FetchXmlBuilder/issues/822");
         }
 
         private void cmbQExStyle_SelectedIndexChanged(object sender, EventArgs e)
@@ -926,7 +926,7 @@ Click the ""Help"" button to vote on this Issue #822 and it will be implemented,
 
 More votes == released sooner.", "QueryExpressionFactory",
                             MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, 0,
-                            "https://github.com/rappen/FetchXMLBuilder/issues/822");
+                            "https://github.com/rappen/FetchXmlBuilder/issues/822");
                         break;
 
                     case QExStyleEnum.OrganizationServiceContext:
@@ -937,7 +937,7 @@ Click the ""Help"" button to vote on this Issue #859 and it will be implemented,
 
 More votes == released sooner.", "OrganizationServiceContext",
                             MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, 0,
-                            "https://github.com/rappen/FetchXMLBuilder/issues/859");
+                            "https://github.com/rappen/FetchXmlBuilder/issues/859");
                         break;
 
                     case QExStyleEnum.FetchXML:

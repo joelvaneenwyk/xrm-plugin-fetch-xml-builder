@@ -31,7 +31,7 @@ namespace Rappen.XTB.FetchXmlBuilder.Forms
         public static string GetReleaseNotesUrl(Version version)
         {
             var verurl = $"{version.Major}-{version.Minor}-{version.Build}";
-            var releasenotes = $"https://fetchxmlbuilder.com/releases/{verurl}#content";
+            var releasenotes = $"https://FetchXmlBuilder.com/releases/{verurl}#content";
             releasenotes = Utils.ProcessURL(releasenotes);
             return releasenotes;
         }
@@ -45,12 +45,12 @@ namespace Rappen.XTB.FetchXmlBuilder.Forms
 
         private void llTwitter_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FetchXmlBuilder.OpenURL("http://twitter.com/FetchXMLBuilder");
+            FetchXmlBuilder.OpenURL("http://twitter.com/FetchXmlBuilder");
         }
 
         private void llWeb_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FetchXmlBuilder.OpenURL("https://fetchxmlbuilder.com");
+            FetchXmlBuilder.OpenURL("https://FetchXmlBuilder.com");
         }
 
         private void llStats_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

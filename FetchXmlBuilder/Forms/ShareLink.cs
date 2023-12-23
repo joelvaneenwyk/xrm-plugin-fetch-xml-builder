@@ -59,7 +59,7 @@ namespace Rappen.XTB.FetchXmlBuilder.Forms
 
         private void linkInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FetchXmlBuilder.OpenURL("https://fetchxmlbuilder.com/sharing-queries/");
+            FetchXmlBuilder.OpenURL("https://FetchXmlBuilder.com/sharing-queries/");
         }
 
         private void btnCopy_Click(object sender, EventArgs e)

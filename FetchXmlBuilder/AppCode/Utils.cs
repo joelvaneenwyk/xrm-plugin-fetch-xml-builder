@@ -7,7 +7,7 @@ namespace Rappen.XTB.FetchXmlBuilder.AppCode
 {
     public static class Utils
     {
-        private static NameValueCollection commonparams = new NameValueCollection { { "utm_source", "FetchXMLBuilder" }, { "utm_medium", "XrmToolBox" } };
+        private static NameValueCollection commonparams = new NameValueCollection { { "utm_source", "FetchXmlBuilder" }, { "utm_medium", "XrmToolBox" } };
         private static NameValueCollection microsoftparams = new NameValueCollection { { "WT.mc_id", "DX-MVP-5002475" } };
 
         public static string ProcessURL(string url)

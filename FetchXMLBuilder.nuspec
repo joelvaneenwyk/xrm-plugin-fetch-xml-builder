@@ -6,14 +6,14 @@
 		<title>FetchXML Builder for XrmToolBox</title>
 		<authors>Jonas Rapp</authors>
 		<owners>rappen</owners>
-		<projectUrl>https://fetchxmlbuilder.com</projectUrl>
+		<projectUrl>https://FetchXmlBuilder.com</projectUrl>
 		<iconUrl>https://jonasr.app/wp-content/uploads/2019/09/FXB-2019-2-150-tsp.png</iconUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<summary>Build queries for Microsoft Dataverse and the Power Platform. Investigate data. Fix the layouts. Get code. Empower yourself to achieve more.</summary>
 		<description>
 Build queries for Microsoft Dataverse and the Power Platform. Investigate data. Fix the layouts. Get code. Empower yourself to achieve more.
 
-Read more: https://fetchxmlbuilder.com/
+Read more: https://FetchXmlBuilder.com/
 
 FetchXML Builder is used to create and execute queries against Microsoft Dataverse / Power Apps / Dynamics 365.
 The Power Platform includes technologies we know as:
@@ -52,10 +52,10 @@ To make it even more appealing, there is also the possibility to have it show "F
 		</description>
 		<releaseNotes>
 Full release notes:
-https://fetchxmlbuilder.com/releases/#$versionnumber$
+https://FetchXmlBuilder.com/releases/#$versionnumber$
 
 Released for manual download:
-https://github.com/rappen/FetchXMLBuilder/releases/tag/$buildnumber$
+https://github.com/rappen/FetchXmlBuilder/releases/tag/$buildnumber$
 		</releaseNotes>
 		<copyright>Copyright Jonas Rapp 2014-2023</copyright>
 		<tags>XrmToolBox Plugins FetchXML Builder</tags>
@@ -64,6 +64,6 @@ https://github.com/rappen/FetchXMLBuilder/releases/tag/$buildnumber$
 		</dependencies>
 	</metadata>
 	<files>
-		<file src="FetchXMLBuilder\bin\Release\Rappen.XTB.FXB.dll" target="lib\net472\Plugins" />
+		<file src="FetchXmlBuilder\bin\Release\Rappen.XTB.FXB.dll" target="lib\net472\Plugins" />
 	</files>
 </package>

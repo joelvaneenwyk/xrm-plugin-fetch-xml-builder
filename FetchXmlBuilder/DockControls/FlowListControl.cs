@@ -32,7 +32,7 @@ namespace Rappen.XTB.FetchXmlBuilder.DockControls
                 }
                 catch
                 {
-                    uri = new Uri("https://fetchxmlbuilder.com");
+                    uri = new Uri("https://FetchXmlBuilder.com");
                     lblError.Text = odataurl;
                     lblError.Visible = true;
                     lblError.BringToFront();
@@ -40,7 +40,7 @@ namespace Rappen.XTB.FetchXmlBuilder.DockControls
             }
             catch (Exception ex)
             {
-                uri = new Uri("https://fetchxmlbuilder.com");
+                uri = new Uri("https://FetchXmlBuilder.com");
                 lblError.Text = ex.Message;
                 lblError.Visible = true;
                 lblError.BringToFront();

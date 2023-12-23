@@ -9,12 +9,13 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Cinteros.Xrm.FetchXmlBuilder</RootNamespace>
     <AssemblyName>Rappen.XTB.FXB</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
+    <WebView2LoaderPreference>Static</WebView2LoaderPreference>
     <TargetFrameworkProfile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
@@ -302,11 +303,11 @@
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="AppCode\HistoryManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="FetchXMLBuilder.cs">
+    <Compile Include="FetchXmlBuilder.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="FetchXMLBuilder.Designer.cs">
-      <DependentUpon>FetchXMLBuilder.cs</DependentUpon>
+    <Compile Include="FetchXmlBuilder.Designer.cs">
+      <DependentUpon>FetchXmlBuilder.cs</DependentUpon>
     </Compile>
     <Compile Include="Resources\fetch.cs">
       <DependentUpon>fetch.xsd</DependentUpon>
@@ -359,8 +360,8 @@
     <EmbeddedResource Include="DockControls\TreeBuilderControl.resx">
       <DependentUpon>TreeBuilderControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FetchXMLBuilder.resx">
-      <DependentUpon>FetchXMLBuilder.cs</DependentUpon>
+    <EmbeddedResource Include="FetchXmlBuilder.resx">
+      <DependentUpon>FetchXmlBuilder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\About.resx">
       <DependentUpon>About.cs</DependentUpon>
@@ -537,7 +538,9 @@
     <PackageReference Include="Microsoft.NETCore.Platforms" Version="8.0.0-preview.7.23375.6" />
     <PackageReference Include="Microsoft.NETCore.Targets" Version="6.0.0-preview.4.21253.7" />
     <PackageReference Include="Microsoft.Rest.ClientRuntime" Version="2.3.24" />
-    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2210.55" />
+    <PackageReference Include="Microsoft.Web.WebView2">
+      <Version>1.0.2151.40</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.Web.Xdt" Version="7.0.0-preview.22423.2" />
     <PackageReference Include="MscrmTools.Xrm.Connection" Version="1.2023.6.56" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
@@ -581,6 +584,7 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.Web.WebView2.1.0.2151.40\build\Microsoft.Web.WebView2.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Web.WebView2.1.0.2151.40\build\Microsoft.Web.WebView2.targets'))" />
   </Target>
+  <Import Project="..\Rappen.XTB.Helper\Rappen.XRM.Tokens\Rappen.XRM.Tokens.projitems" Label="Shared" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

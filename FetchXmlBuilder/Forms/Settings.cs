@@ -222,7 +222,7 @@ namespace Rappen.XTB.FetchXmlBuilder.Forms
 
         private void linkLayout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FetchXmlBuilder.OpenURL("https://fetchxmlbuilder.com/features/layouts");
+            FetchXmlBuilder.OpenURL("https://FetchXmlBuilder.com/features/layouts");
         }
 
         private void linkGeneral_Click(object sender, LinkLabelLinkClickedEventArgs e)

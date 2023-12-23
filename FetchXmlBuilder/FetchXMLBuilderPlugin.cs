@@ -22,6 +22,6 @@ namespace Rappen.XTB.FetchXmlBuilder
 
         public override IXrmToolBoxPluginControl GetControl() => new FetchXmlBuilder();
 
-        public override Guid GetId() => XrmToolBoxToolIds.FetchXMLBuilder;
+        public override Guid GetId() => XrmToolBoxToolIds.FetchXmlBuilder;
     }
 }

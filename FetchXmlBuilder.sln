@@ -3,14 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FetchXMLBuilder", "FetchXmlBuilder\FetchXMLBuilder.csproj", "{D746CBE7-7787-47FC-B773-F089A44DF8C9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FetchXmlBuilder", "FetchXmlBuilder\FetchXmlBuilder.csproj", "{D746CBE7-7787-47FC-B773-F089A44DF8C9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".Solution", ".Solution", "{13AB47EF-2E67-4179-876C-88816794849B}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 		.gitmodules = .gitmodules
 		codealike.json = codealike.json
-		FetchXMLBuilder.nuspec = FetchXMLBuilder.nuspec
+		FetchXmlBuilder.nuspec = FetchXmlBuilder.nuspec
 		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
@@ -63,10 +63,12 @@ Global
 		{D746CBE7-7787-47FC-B773-F089A44DF8C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D746CBE7-7787-47FC-B773-F089A44DF8C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D746CBE7-7787-47FC-B773-F089A44DF8C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D746CBE7-7787-47FC-B773-F089A44DF8C9}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{8F32EF58-AC53-49DE-957B-102D78368377}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8F32EF58-AC53-49DE-957B-102D78368377}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F32EF58-AC53-49DE-957B-102D78368377}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F32EF58-AC53-49DE-957B-102D78368377}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F32EF58-AC53-49DE-957B-102D78368377}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -103,6 +105,7 @@ Global
 		MarkMpn.XmlSchemaAutocomplete\MarkMpn.XmlSchemaAutoComplete\MarkMpn.XmlSchemaAutoComplete.projitems*{d746cbe7-7787-47fc-b773-f089a44df8c9}*SharedItemsImports = 4
 		MsCrmTools.MetadataBrowser\MsCrmTools.MetadataBrowser\MsCrmTools.MetadataBrowser.Shared.projitems*{d746cbe7-7787-47fc-b773-f089a44df8c9}*SharedItemsImports = 4
 		Rappen.XTB.Helper\Rappen.XRM.Helpers\Rappen.XRM.Helpers.projitems*{d746cbe7-7787-47fc-b773-f089a44df8c9}*SharedItemsImports = 4
+		Rappen.XTB.Helper\Rappen.XRM.Tokens\Rappen.XRM.Tokens.projitems*{d746cbe7-7787-47fc-b773-f089a44df8c9}*SharedItemsImports = 4
 		Rappen.XTB.Helper\Rappen.XTB.Helpers\Rappen.XTB.Helpers.projitems*{d746cbe7-7787-47fc-b773-f089a44df8c9}*SharedItemsImports = 4
 		FXBEditorUtils\FXBEditorUtils.projitems*{faf35e13-1a84-45b3-a315-c62d15ac888a}*SharedItemsImports = 13
 	EndGlobalSection

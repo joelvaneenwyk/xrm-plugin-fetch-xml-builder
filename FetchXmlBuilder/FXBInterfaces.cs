@@ -31,9 +31,9 @@ namespace Rappen.XTB.FetchXmlBuilder
 
         public string EmailAccount => "jonas@rappen.net";
 
-        public string HelpUrl => "https://fetchxmlbuilder.com?utm_source=XTBHelp";
+        public string HelpUrl => "https://FetchXmlBuilder.com?utm_source=XTBHelp";
 
-        public string RepositoryName => "FetchXMLBuilder";
+        public string RepositoryName => "FetchXmlBuilder";
 
         public string UserName => "rappen";
 
@@ -245,7 +245,7 @@ namespace Rappen.XTB.FetchXmlBuilder
             LogUse("ReturnTo." + callerArgs.SourcePlugin, ai2: true);
             if (callerArgs.SourcePlugin == URLcaller)
             {
-                OpenURL("https://fetchxmlbuilder.com/sharing-queries/");
+                OpenURL("https://FetchXmlBuilder.com/sharing-queries/");
                 return;
             }
             var fetch = dockControlBuilder.GetFetchString(true, true);

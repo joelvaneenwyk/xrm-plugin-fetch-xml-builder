@@ -57,7 +57,7 @@ namespace Rappen.XTB.FetchXmlBuilder.Forms
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FetchXmlBuilder.OpenURL("https://fetchxmlbuilder.com");
+            FetchXmlBuilder.OpenURL("https://FetchXmlBuilder.com");
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -67,7 +67,7 @@ namespace Rappen.XTB.FetchXmlBuilder.Forms
 
         private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FetchXmlBuilder.OpenURL("http://twitter.com/FetchXMLBuilder");
+            FetchXmlBuilder.OpenURL("http://twitter.com/FetchXmlBuilder");
         }
 
         private void llShowWelcome_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
