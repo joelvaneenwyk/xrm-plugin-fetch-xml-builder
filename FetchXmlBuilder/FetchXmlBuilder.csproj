@@ -1,6 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <WebView2UseDispatchAdapter>True</WebView2UseDispatchAdapter>
+  </PropertyGroup>
   <PropertyGroup>
-    <TargetFramework>net471</TargetFramework>
+    <TargetFramework>net48</TargetFramework>
     <OutputType>Library</OutputType>
     <RootNamespace>Cinteros.Xrm.FetchXmlBuilder</RootNamespace>
     <AssemblyName>Rappen.XTB.FXB</AssemblyName>
@@ -14,7 +17,9 @@
     <UseWPF>true</UseWPF>
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
   </PropertyGroup>
-  <PropertyGroup />
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>True</AutoGenerateBindingRedirects>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug Without Gembox|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\Debug Without Gembox\</OutputPath>
@@ -22,6 +27,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug Without Gembox|Win32'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\Win32\Debug Without Gembox\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <WarningLevel>7</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <WarningLevel>7</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System.Activities" />
