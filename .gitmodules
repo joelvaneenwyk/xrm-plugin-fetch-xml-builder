@@ -1,16 +1,16 @@
 [submodule "MarkMpn.FetchXmlToWebAPI"]
 	path = MarkMpn.FetchXmlToWebAPI
-	url = git@github.com:joelvaneenwyk/MarkMpn.FetchXmlToWebAPI.git
+	url = https://github.com/joelvaneenwyk/MarkMpn.FetchXmlToWebAPI.git
 	branch = main
 [submodule "Rappen.XTB.Helper"]
 	path = Rappen.XTB.Helper
-	url = git@github.com:joelvaneenwyk/Rappen.XTB.Helper.git
+	url = https://github.com/joelvaneenwyk/Rappen.XTB.Helper.git
 	branch = main
 [submodule "MarkMpn.XmlSchemaAutoComplete"]
 	path = MarkMpn.XmlSchemaAutoComplete
-	url = git@github.com:joelvaneenwyk/MarkMpn.XmlSchemaAutoComplete
+	url = https://github.com/joelvaneenwyk/MarkMpn.XmlSchemaAutoComplete.git
 	branch = main
 [submodule "MsCrmTools.MetadataBrowser"]
 	path = MsCrmTools.MetadataBrowser
-	url = git@github.com:joelvaneenwyk/MsCrmTools.MetadataBrowser
+	url = https://github.com/joelvaneenwyk/MsCrmTools.MetadataBrowser.git
 	branch = main
