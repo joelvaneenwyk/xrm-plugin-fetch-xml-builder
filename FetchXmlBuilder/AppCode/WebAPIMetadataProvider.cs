@@ -31,7 +31,7 @@ namespace Rappen.XTB.FetchXmlBuilder.AppCode
             return metadata;
         }
 
-        public EntityMetadata GetEntity(int otc)
+        public EntityMetadata GetEntity(int? otc)
         {
             if (fetchXmlBuilder.entities == null)
             {
