@@ -8,7 +8,6 @@ using Rappen.XTB.FetchXmlBuilder.Controls;
 using Rappen.XTB.FetchXmlBuilder.Extensions;
 using Rappen.XTB.FetchXmlBuilder.Forms;
 using Rappen.XTB.FetchXmlBuilder.Views;
-using Rappen.XTB.Helpers.Controls;
 using Rappen.XTB.XmlEditorUtils;
 using System;
 using System.Collections.Generic;
