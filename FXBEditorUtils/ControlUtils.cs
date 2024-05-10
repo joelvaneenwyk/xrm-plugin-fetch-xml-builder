@@ -192,7 +192,7 @@ namespace Rappen.XTB.XmlEditorUtils
 
         public static void FillControl(Dictionary<string, string> collection, Control control, IDefinitionSavable saveable)
         {
-            if (control.Tag != null && control.Tag != "uiname" && GetControlDefinition(control, out string attribute, out bool required, out string defaultvalue))
+            if (control.Tag?.ToString() != "uiname" && GetControlDefinition(control, out string attribute, out bool required, out string defaultvalue))
             {
                 if (!collection.TryGetValue(attribute, out string value))
                 {
