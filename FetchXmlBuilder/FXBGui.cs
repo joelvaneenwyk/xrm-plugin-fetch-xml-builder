@@ -66,7 +66,7 @@ namespace Rappen.XTB.FetchXmlBuilder
                     tsbExecute.Enabled = enabled && Service != null;
                     tsbAbort.Visible = settings.Results.RetrieveAllPages;
                     tsbBDU.Visible = settings.ShowBDU && bduexists && callerArgs?.SourcePlugin != "Bulk Data Updater";
-                    tsbBDU.Enabled = enabled && (dockControlBuilder?.IsFetchAggregate() == false);
+                    tsbBDU.Enabled = enabled && dockControlBuilder?.IsFetchAggregate() == false;
                     tsbReturnToCaller.Visible = CallerWantsResults();
 
                     // Sub menu Open items
@@ -86,12 +86,12 @@ namespace Rappen.XTB.FetchXmlBuilder
                     tsmiSelect.Enabled = enabled && Service != null;
 
                     // Sub menu Convert items
-                    tsmiShowLayoutXML.Enabled = enabled && Service != null && (dockControlBuilder?.IsFetchAggregate() == false) && settings.Results.WorkWithLayout;
+                    tsmiShowLayoutXML.Enabled = enabled && Service != null && dockControlBuilder?.IsFetchAggregate() == false && settings.Results.WorkWithLayout;
                     tsmiShowMetadata.Enabled = enabled && Service != null;
                     tsmiShowFlow.Enabled = enabled && Service != null;
                     tsmiShowOData.Enabled = enabled && Service != null;
                     tsmiShowOData4.Enabled = enabled && Service != null;
-                    tsmiShowCSharpCode.Enabled = enabled && Service != null && (dockControlBuilder?.IsFetchAggregate() == false);
+                    tsmiShowCSharpCode.Enabled = enabled && Service != null && dockControlBuilder?.IsFetchAggregate() == false;
 
                     // Enable local menus/buttons/etc
                     dockControlBuilder?.EnableControls(enabled);
@@ -224,7 +224,7 @@ namespace Rappen.XTB.FetchXmlBuilder
 
         private void CheckIntegrationTools()
         {
-            bduexists = PluginManagerExtended.Instance.Plugins.Any(p =>
+            bduexists = PluginManagerExtended.Instance.ValidatedPlugins.Any(p =>
                 p.Metadata.Name == "Bulk Data Updater" && new Version(p.Value.GetVersion()) > new Version(1, 2020, 12, 4));
         }
 

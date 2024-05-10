@@ -546,7 +546,7 @@ namespace Rappen.XTB.FetchXmlBuilder.Converters
             var commentconds = filter.Conditions.Count > 0 ? $" {filter.Conditions.Count} conditions" : "";
             var commentfilts = filter.Filters.Count > 0 ? $" {filter.Filters.Count} filters" : "";
             var comment = $"{Indent(indentslevel)}// Add filter to {entity} with{commentconds}{commentfilts}{CRLF}";
-            var dlabrootfilters = /*settings.QExFlavor == QExFlavorEnum.EarlyBound &&*/ (filter.FilterHint.EndsWith("Criteria") || filter.FilterHint.EndsWith("Criteria.Filters"));
+            var dlabrootfilters = /*settings.QExFlavor == QExFlavorEnum.EarlyBound &&*/ filter.FilterHint.EndsWith("Criteria") || filter.FilterHint.EndsWith("Criteria.Filters");
             var addfilterexpression = true;
             switch (settings.QExStyle)
             {

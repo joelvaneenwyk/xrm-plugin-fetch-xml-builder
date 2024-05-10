@@ -636,7 +636,7 @@ namespace Rappen.XTB.FetchXmlBuilder.DockControls
             }
 
             // Autocomplete attribute names for <attribute>, <condition> and <order> elements
-            if (((e.Element.Name == "attribute" && e.Attribute.Name == "name") || ((e.Element.Name == "condition" || e.Element.Name == "order") && e.Attribute.Name == "attribute")) ||
+            if ((e.Element.Name == "attribute" && e.Attribute.Name == "name") || ((e.Element.Name == "condition" || e.Element.Name == "order") && e.Attribute.Name == "attribute") ||
                 (e.Element.Name == "condition" && e.Attribute.Name == "valueof"))
             {
                 var entityNode = (XmlElement)e.Element.ParentNode;
@@ -1001,7 +1001,7 @@ More votes == released sooner.", "OrganizationServiceContext",
 
         private void linkFlavorHelp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            var url = (cmbQExFlavor.SelectedItem is QExFlavor flavor) ? flavor.HelpUrl : string.Empty;
+            var url = cmbQExFlavor.SelectedItem is QExFlavor flavor ? flavor.HelpUrl : string.Empty;
             if (!string.IsNullOrWhiteSpace(url))
             {
                 FetchXmlBuilder.OpenURL(url);
@@ -1010,7 +1010,7 @@ More votes == released sooner.", "OrganizationServiceContext",
 
         private void linkStyleHelp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            var url = (cmbQExStyle.SelectedItem is QExStyle style) ? style.HelpUrl : string.Empty;
+            var url = cmbQExStyle.SelectedItem is QExStyle style ? style.HelpUrl : string.Empty;
             if (!string.IsNullOrWhiteSpace(url))
             {
                 FetchXmlBuilder.OpenURL(url);

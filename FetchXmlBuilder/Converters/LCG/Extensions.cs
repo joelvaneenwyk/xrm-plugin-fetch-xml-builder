@@ -41,7 +41,7 @@ namespace Rappen.XTB.LCG
             for (var i = 0; i < name.Length; i++)
             {
                 var chr = name[i];
-                if ((chr < 'a') &&
+                if (chr < 'a' &&
                     (chr < 'A' || chr > 'Z') &&
                     (chr < '0' || chr > '9'))
                 {   // Any non-letters/numbers are treated as word separators

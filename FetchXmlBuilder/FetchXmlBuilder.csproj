@@ -1,143 +1,145 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup Label="Globals">
-    <WebView2UseDispatchAdapter>True</WebView2UseDispatchAdapter>
-    <Configurations>Debug;Release</Configurations>
-  </PropertyGroup>
-  <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
-    <OutputType>Library</OutputType>
-    <RootNamespace>Cinteros.Xrm.FetchXmlBuilder</RootNamespace>
-    <AssemblyName>Rappen.XTB.FXB</AssemblyName>
-    <WebView2LoaderPreference>Static</WebView2LoaderPreference>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <UseWindowsForms>true</UseWindowsForms>
-    <UseWPF>true</UseWPF>
-    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
-  </PropertyGroup>
-  <PropertyGroup>
-    <AutoGenerateBindingRedirects>True</AutoGenerateBindingRedirects>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug Without Gembox|AnyCPU'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\Debug Without Gembox\</OutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug Without Gembox|Win32'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\Win32\Debug Without Gembox\</OutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <WarningLevel>7</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <WarningLevel>7</WarningLevel>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System.Activities" />
-    <Reference Include="System.Activities.Presentation" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Design" />
-    <Reference Include="System.IdentityModel" />
-    <Reference Include="System.IO.Compression" />
-    <Reference Include="System.Net" />
-    <Reference Include="System.Net.Http.WebRequest" />
-    <Reference Include="System.Security" />
-    <Reference Include="System.ServiceModel" />
-    <Reference Include="System.ServiceModel.Web" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Web.Services" />
-    <Reference Include="System.Workflow.Activities" />
-    <Reference Include="System.Workflow.ComponentModel" />
-    <Reference Include="System.Workflow.Runtime" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Update="FXBGui.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="FXBMetadata.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="FXBInterfaces.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Controls\commentControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Controls\FetchXmlElementControlBase.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Controls\XRMMetadataControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Controls\orderControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Controls\conditionControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Controls\attributeControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Controls\valueControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Controls\filterControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Controls\linkEntityControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Controls\entityControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Controls\fetchControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="FXBQueries.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="FetchXMLBuilder.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Resources\fetch.cs">
-      <DependentUpon>fetch.xsd</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\fetch.xsd">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <None Update="XrmToolBox.exe.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="DockPanelSuite.ThemeVS2015" Version="3.1.0" />
-    <PackageReference Include="jacobslusser.ScintillaNET" Version="3.6.3" />
-    <PackageReference Include="JetBrains.Annotations" Version="2023.3.0" />
-    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="8.0.0" />
-    <PackageReference Include="Microsoft.CrmSdk.XrmTooling.WpfControls" Version="9.1.1.45" />
-    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-    <PackageReference Include="Microsoft.NETCore.Platforms" Version="8.0.0-preview.7.23375.6" />
-    <PackageReference Include="Microsoft.NETCore.Targets" Version="6.0.0-preview.4.21253.7" />
-    <PackageReference Include="Microsoft.PowerFx.Core" Version="1.2.0" />
-    <PackageReference Include="Microsoft.PowerFx.Interpreter" Version="1.2.0" />
-    <PackageReference Include="Microsoft.Rest.ClientRuntime" Version="2.3.24" />
-    <PackageReference Include="MscrmTools.Xrm.Connection" Version="1.2023.6.56" />
-    <PackageReference Include="System.ComponentModel.Composition" Version="8.0.0" />
-    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
-    <PackageReference Include="System.Private.Uri" Version="4.3.2" />
-    <PackageReference Include="XrmToolBoxPackage" Version="1.2023.10.67" />
-  </ItemGroup>
-  <Import Project="..\FXBEditorUtils\FXBEditorUtils.projitems" Label="Shared" />
-  <Import Project="..\MarkMpn.FetchXmlToWebAPI\MarkMpn.FetchXmlToWebAPI\MarkMpn.FetchXmlToWebAPI.projitems" Label="Shared" />
-  <Import Project="..\MarkMpn.XmlSchemaAutocomplete\MarkMpn.XmlSchemaAutoComplete\MarkMpn.XmlSchemaAutoComplete.projitems" Label="Shared" />
-  <Import Project="..\MarkMpn.XmlSchemaAutocomplete\MarkMpn.XmlSchemaAutocomplete.Scintilla\MarkMpn.XmlSchemaAutocomplete.Scintilla.projitems" Label="Shared" />
-  <Import Project="..\MsCrmTools.MetadataBrowser\MsCrmTools.MetadataBrowser\MsCrmTools.MetadataBrowser.Shared.projitems" Label="Shared" />
-  <Import Project="..\Rappen.XTB.Helper\Rappen.XRM.Helpers\Rappen.XRM.Helpers.projitems" Label="Shared" />
-  <Import Project="..\Rappen.XTB.Helper\Rappen.XRM.Tokens\Rappen.XRM.Tokens.projitems" Label="Shared" />
-  <Import Project="..\Rappen.XTB.Helper\Rappen.XTB.Helpers\Rappen.XTB.Helpers.projitems" Label="Shared" />
+	<PropertyGroup Label="Globals">
+		<WebView2UseDispatchAdapter>True</WebView2UseDispatchAdapter>
+		<Configurations>Debug;Release</Configurations>
+	</PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net48</TargetFramework>
+		<OutputType>Library</OutputType>
+		<RootNamespace>Cinteros.Xrm.FetchXmlBuilder</RootNamespace>
+		<AssemblyName>Rappen.XTB.FXB</AssemblyName>
+		<WebView2LoaderPreference>Static</WebView2LoaderPreference>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<UseWindowsForms>true</UseWindowsForms>
+		<UseWPF>true</UseWPF>
+		<ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+	</PropertyGroup>
+	<PropertyGroup>
+		<AutoGenerateBindingRedirects>True</AutoGenerateBindingRedirects>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug Without Gembox|AnyCPU'">
+		<DebugSymbols>true</DebugSymbols>
+		<OutputPath>bin\Debug Without Gembox\</OutputPath>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug Without Gembox|Win32'">
+		<DebugSymbols>true</DebugSymbols>
+		<OutputPath>bin\Win32\Debug Without Gembox\</OutputPath>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<WarningLevel>7</WarningLevel>
+		<NoWarn>1701;1702;MSB3277;NU1603;CS8981;IDE0160</NoWarn>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<WarningLevel>7</WarningLevel>
+		<NoWarn>1701;1702;MSB3277;NU1603;CS8981;IDE0160</NoWarn>
+	</PropertyGroup>
+	<ItemGroup>
+		<Reference Include="System.Activities" />
+		<Reference Include="System.Activities.Presentation" />
+		<Reference Include="System.Configuration" />
+		<Reference Include="System.Design" />
+		<Reference Include="System.IdentityModel" />
+		<Reference Include="System.IO.Compression" />
+		<Reference Include="System.Net" />
+		<Reference Include="System.Net.Http.WebRequest" />
+		<Reference Include="System.Security" />
+		<Reference Include="System.ServiceModel" />
+		<Reference Include="System.ServiceModel.Web" />
+		<Reference Include="System.Web" />
+		<Reference Include="System.Web.Extensions" />
+		<Reference Include="System.Web.Services" />
+		<Reference Include="System.Workflow.Activities" />
+		<Reference Include="System.Workflow.ComponentModel" />
+		<Reference Include="System.Workflow.Runtime" />
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Update="FXBGui.cs">
+			<SubType>UserControl</SubType>
+		</Compile>
+		<Compile Update="FXBMetadata.cs">
+			<SubType>UserControl</SubType>
+		</Compile>
+		<Compile Update="FXBInterfaces.cs">
+			<SubType>UserControl</SubType>
+		</Compile>
+		<Compile Update="Controls\commentControl.cs">
+			<SubType>UserControl</SubType>
+		</Compile>
+		<Compile Update="Controls\FetchXmlElementControlBase.cs">
+			<SubType>UserControl</SubType>
+		</Compile>
+		<Compile Update="Controls\XRMMetadataControl.cs">
+			<SubType>UserControl</SubType>
+		</Compile>
+		<Compile Update="Controls\orderControl.cs">
+			<SubType>UserControl</SubType>
+		</Compile>
+		<Compile Update="Controls\conditionControl.cs">
+			<SubType>UserControl</SubType>
+		</Compile>
+		<Compile Update="Controls\attributeControl.cs">
+			<SubType>UserControl</SubType>
+		</Compile>
+		<Compile Update="Controls\valueControl.cs">
+			<SubType>UserControl</SubType>
+		</Compile>
+		<Compile Update="Controls\filterControl.cs">
+			<SubType>UserControl</SubType>
+		</Compile>
+		<Compile Update="Controls\linkEntityControl.cs">
+			<SubType>UserControl</SubType>
+		</Compile>
+		<Compile Update="Controls\entityControl.cs">
+			<SubType>UserControl</SubType>
+		</Compile>
+		<Compile Update="Controls\fetchControl.cs">
+			<SubType>UserControl</SubType>
+		</Compile>
+		<Compile Update="FXBQueries.cs">
+			<SubType>UserControl</SubType>
+		</Compile>
+		<Compile Update="FetchXMLBuilder.cs">
+			<SubType>UserControl</SubType>
+		</Compile>
+		<Compile Update="Resources\fetch.cs">
+			<DependentUpon>fetch.xsd</DependentUpon>
+		</Compile>
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="Resources\fetch.xsd">
+			<SubType>Designer</SubType>
+		</EmbeddedResource>
+	</ItemGroup>
+	<ItemGroup>
+		<None Update="XrmToolBox.exe.config">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<SubType>Designer</SubType>
+		</None>
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="DockPanelSuite.ThemeVS2015" Version="3.1.0" />
+		<PackageReference Include="jacobslusser.ScintillaNET" Version="3.6.3" />
+		<PackageReference Include="JetBrains.Annotations" Version="2023.3.0" />
+		<PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="8.0.0" />
+		<PackageReference Include="Microsoft.CrmSdk.XrmTooling.WpfControls" Version="9.1.1.45" />
+		<PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+		<PackageReference Include="Microsoft.NETCore.Platforms" Version="8.0.0-preview.7.23375.6" />
+		<PackageReference Include="Microsoft.NETCore.Targets" Version="6.0.0-preview.4.21253.7" />
+		<PackageReference Include="Microsoft.PowerFx.Core" Version="1.2.0" />
+		<PackageReference Include="Microsoft.PowerFx.Interpreter" Version="1.2.0" />
+		<PackageReference Include="Microsoft.Rest.ClientRuntime" Version="2.3.24" />
+		<PackageReference Include="MscrmTools.Xrm.Connection" Version="1.2023.6.56" />
+		<PackageReference Include="System.ComponentModel.Composition" Version="8.0.0" />
+		<PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+		<PackageReference Include="System.Private.Uri" Version="4.3.2" />
+		<PackageReference Include="XrmToolBoxPackage" Version="1.2023.10.67" />
+	</ItemGroup>
+	<Import Project="..\FXBEditorUtils\FXBEditorUtils.projitems" Label="Shared" />
+	<Import Project="..\MarkMpn.FetchXmlToWebAPI\MarkMpn.FetchXmlToWebAPI\MarkMpn.FetchXmlToWebAPI.projitems" Label="Shared" />
+	<Import Project="..\MarkMpn.XmlSchemaAutocomplete\MarkMpn.XmlSchemaAutoComplete\MarkMpn.XmlSchemaAutoComplete.projitems" Label="Shared" />
+	<Import Project="..\MarkMpn.XmlSchemaAutocomplete\MarkMpn.XmlSchemaAutocomplete.Scintilla\MarkMpn.XmlSchemaAutocomplete.Scintilla.projitems" Label="Shared" />
+	<Import Project="..\MsCrmTools.MetadataBrowser\MsCrmTools.MetadataBrowser\MsCrmTools.MetadataBrowser.Shared.projitems" Label="Shared" />
+	<Import Project="..\Rappen.XTB.Helper\Rappen.XRM.Helpers\Rappen.XRM.Helpers.projitems" Label="Shared" />
+	<Import Project="..\Rappen.XTB.Helper\Rappen.XRM.Tokens\Rappen.XRM.Tokens.projitems" Label="Shared" />
+	<Import Project="..\Rappen.XTB.Helper\Rappen.XTB.Helpers\Rappen.XTB.Helpers.projitems" Label="Shared" />
 </Project>

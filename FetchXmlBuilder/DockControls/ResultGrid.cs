@@ -9,6 +9,7 @@ using System;
 using System.Linq;
 using System.Windows.Forms;
 using System.Xml;
+using JetBrains.Annotations;
 
 namespace Rappen.XTB.FetchXmlBuilder.DockControls
 {
@@ -17,7 +18,6 @@ namespace Rappen.XTB.FetchXmlBuilder.DockControls
         private FetchXmlBuilder form;
         private QueryInfo queryinfo;
         private bool reloaded;
-        private DateTime lasterrormessage;
 
         public ResultGrid(FetchXmlBuilder fetchXmlBuilder)
         {
@@ -292,8 +292,8 @@ namespace Rappen.XTB.FetchXmlBuilder.DockControls
 
         private void ctxmenuGrid_Opened(object sender, EventArgs e)
         {
-            ctxRecord.Enabled = (ctxRecordOpen.Tag is string url1 && !string.IsNullOrWhiteSpace(url1));
-            ctxColumn.Enabled = (ctxColumnOpen.Tag is string url2 && !string.IsNullOrWhiteSpace(url2));
+            ctxRecord.Enabled = ctxRecordOpen.Tag is string url1 && !string.IsNullOrWhiteSpace(url1);
+            ctxColumn.Enabled = ctxColumnOpen.Tag is string url2 && !string.IsNullOrWhiteSpace(url2);
         }
 
         private void mnuBehaviorColumns_DropDownOpening(object sender, EventArgs e)

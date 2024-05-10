@@ -64,7 +64,7 @@ namespace Rappen.XTB.FetchXmlBuilder.Controls
                 }
                 if (fxb.entities != null)
                 {
-                    var attributename = (cmbAttribute.SelectedItem is AttributeItem item && item.Metadata != null) ? item.Metadata.LogicalName : cmbAttribute.Text;
+                    var attributename = cmbAttribute.SelectedItem is AttributeItem item && item.Metadata != null ? item.Metadata.LogicalName : cmbAttribute.Text;
                     if (!allattributes.Any(a => a.LogicalName == attributename))
                     {
                         return new ControlValidationResult(ControlValidationLevel.Warning, "Attribute", ControlValidationMessage.NotInMetadata);
