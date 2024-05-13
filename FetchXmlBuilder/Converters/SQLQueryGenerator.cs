@@ -124,8 +124,8 @@ namespace Rappen.XTB.FetchXmlBuilder.Converters
                     }
                     if (linkitems.Count == 1)
                     {
-                        var nextlink = (FetchLinkEntityType)linkitems[0];
-                        attributeitems = nextlink.Items.Where(i => i is FetchAttributeType && ((FetchAttributeType)i).name != null).ToList();
+                        var nextLink = (FetchLinkEntityType)linkitems[0];
+                        attributeitems = nextLink.Items.Where(i => i is FetchAttributeType && ((FetchAttributeType)i).name != null).ToList();
                     }
                 }
                 if (attributeitems.Count > 0)

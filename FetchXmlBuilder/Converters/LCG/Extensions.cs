@@ -1,4 +1,5 @@
-﻿using Microsoft.Xrm.Sdk.Metadata;
+﻿using System;
+using Microsoft.Xrm.Sdk.Metadata;
 using System.Linq;
 
 namespace Rappen.XTB.LCG
@@ -108,10 +109,10 @@ namespace Rappen.XTB.LCG
             return UnicodeCharacterUtilities.MakeValidIdentifier(name, false);
         }
 
-        internal static string GetEntityClass(this EntityMetadata entity, Settings lcgsettings)
+        internal static string GetEntityClass(this EntityMetadata entity, Settings lcgSettings)
         {
             var result = entity.LogicalName;
-            switch (lcgsettings.ConstantName)
+            switch (lcgSettings.ConstantName)
             {
                 case NameType.DisplayName:
                     result = StringToCSharpIdentifier(entity.DisplayName?.UserLocalizedLabel?.Label ?? entity.LogicalName);
@@ -120,9 +121,13 @@ namespace Rappen.XTB.LCG
                 case NameType.SchemaName:
                     result = entity.SchemaName;
                     break;
+                case NameType.LogicalName:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
-            result = StripPrefix(result, lcgsettings);
-            result = CamelCaseIt(result, lcgsettings);
+            result = StripPrefix(result, lcgSettings);
+            result = CamelCaseIt(result, lcgSettings);
             return result;
         }
 

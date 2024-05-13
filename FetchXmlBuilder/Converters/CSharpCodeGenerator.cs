@@ -7,17 +7,18 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using JetBrains.Annotations;
 
 namespace Rappen.XTB.FetchXmlBuilder.Converters
 {
     public class CSharpCodeGenerator
     {
-        private List<string> globalVariables;
-        private static string CRLF = "\r\n";
-        private QueryExpression qex;
-        private List<EntityMetadata> metas;
-        private CodeGenerators settings;
-        private Dictionary<string, string> entityaliases;
+        private readonly List<string> globalVariables = new List<string>();
+        private const string CRLF = "\r\n";
+        private readonly QueryExpression qex;
+        private readonly List<EntityMetadata> metas = new List<EntityMetadata>();
+        private readonly CodeGenerators settings;
+        private readonly Dictionary<string, string> entityaliases = new Dictionary<string, string>();
         private string betweenchar = ";";
         private const int CODE_WIDTH_LIMIT = 120;
 
@@ -28,10 +29,12 @@ namespace Rappen.XTB.FetchXmlBuilder.Converters
             {
                 throw new ArgumentOutOfRangeException("Style & Flavor", "Combo is not possible.");
             }
+
             if (settings.CodeGenerators.QExStyle == QExStyleEnum.QueryExpressionFactory)
             {
                 throw new ArgumentOutOfRangeException("Style", "Sorry, not yet finalized. It's a bit tricky, but we're getting there... One day...");
             }
+
             if (settings.CodeGenerators.QExStyle == QExStyleEnum.OrganizationServiceContext)
             {
                 throw new ArgumentOutOfRangeException("Style", "Not really started yet. Might get there... One month...");
@@ -43,13 +46,11 @@ namespace Rappen.XTB.FetchXmlBuilder.Converters
             return result;
         }
 
-        private CSharpCodeGenerator(QueryExpression QEx, List<EntityMetadata> entities, FXBSettings fxbsettings)
+        private CSharpCodeGenerator(QueryExpression QEx, List<EntityMetadata> entities, [CanBeNull] FXBSettings fxbsettings)
         {
-            globalVariables = new List<string>();
-            entityaliases = new Dictionary<string, string>();
-            metas = entities;
-            qex = QEx;
-            settings = fxbsettings.CodeGenerators;
+            metas.AddRange(entities ?? new List<EntityMetadata>());
+            qex = QEx ?? new QueryExpression();
+            settings = fxbsettings?.CodeGenerators ?? new CodeGenerators();
             betweenchar = settings.QExStyle == QExStyleEnum.FluentQueryExpression ? "" : ",";
             StoreLinkEntityAliases(qex.LinkEntities);
         }
@@ -170,11 +171,14 @@ namespace Rappen.XTB.FetchXmlBuilder.Converters
 
         private string GetColumns(string entity, ColumnSet columns, string ownerName, OwnersType ownerType, int indentslevel) => settings.ObjectInitializer ? GetColumnsOI(entity, columns, ownerType, indentslevel) : GetColumnsLbL(entity, columns, ownerName, ownerType);
 
-        private string GetFilter(string entity, FilterExpression filter, string ownerName, OwnersType ownerType, int indentslevel = 1, List<string> namestree = null) => settings.ObjectInitializer ? GetFilterOI(entity, filter, ownerName, ownerType, indentslevel, namestree) : GetFilterLbL(entity, filter, ownerName, ownerType);
+        private string GetFilter(string entity, FilterExpression filter, string ownerName, OwnersType ownerType, int indentslevel = 1, List<string> namestree = null) => 
+            settings.ObjectInitializer ? GetFilterOI(entity, filter, ownerName, ownerType, indentslevel, namestree) : GetFilterLbL(entity, filter, ownerName, ownerType);
 
-        private string GetOrders(string entityname, DataCollection<OrderExpression> orders, string ownerName, OwnersType ownerType, int indentslevel = 1) => settings.ObjectInitializer ? GetOrdersOI(entityname, orders, ownerName, ownerType, indentslevel) : GetOrdersLbL(entityname, orders, ownerName);
+        private string GetOrders(string entityname, DataCollection<OrderExpression> orders, string ownerName, OwnersType ownerType, int indentslevel = 1) => 
+            settings.ObjectInitializer ? GetOrdersOI(entityname, orders, ownerName, ownerType, indentslevel) : GetOrdersLbL(entityname, orders, ownerName);
 
-        private string GetLinkEntities(DataCollection<LinkEntity> linkEntities, string ownerName, int indentslevel = 1, List<string> namestree = null) => settings.ObjectInitializer ? GetLinkEntitiesOI(linkEntities, ownerName, indentslevel, namestree) : GetLinkEntitiesLbL(linkEntities, ownerName);
+        private string GetLinkEntities(DataCollection<LinkEntity> linkEntities, string ownerName, int indentslevel = 1, List<string> namestree = null) => 
+            settings.ObjectInitializer ? GetLinkEntitiesOI(linkEntities, ownerName, indentslevel, namestree) : GetLinkEntitiesLbL(linkEntities, ownerName);
 
         #endregion General
 
@@ -1063,7 +1067,8 @@ namespace Rappen.XTB.FetchXmlBuilder.Converters
             return result;
         }
 
-        private EntityMetadata GetEntityMetadata(string entity) => metas.FirstOrDefault(e => e.LogicalName.Equals(entity));
+        private EntityMetadata GetEntityMetadata(string entity) => 
+            metas.FirstOrDefault(e => e.LogicalName.Equals(entity)) ?? new EntityMetadata();
 
         private string GetEntityName(string entityname)
         {
@@ -1113,8 +1118,9 @@ namespace Rappen.XTB.FetchXmlBuilder.Converters
 
         private AttributeMetadata GetAttributeMetadata(string entityname, string attributename)
         {
-            return metas.FirstOrDefault(e => e.LogicalName.Equals(entityname)) is EntityMetadata entity ?
-                entity.Attributes.FirstOrDefault(a => a.LogicalName.Equals(attributename)) : null;
+            return metas.FirstOrDefault(e => e.LogicalName.Equals(entityname)) is EntityMetadata entity 
+                ? entity.Attributes.FirstOrDefault(a => a.LogicalName.Equals(attributename)) 
+                : null;
         }
 
         private string GetCodeAttribute(string entityname, string attributename, bool addentityprefix = false)
@@ -1191,7 +1197,7 @@ namespace Rappen.XTB.FetchXmlBuilder.Converters
             var attributemeta = GetAttributeMetadata(entity, cond.AttributeName);
             var enumattr = attributemeta as EnumAttributeMetadata;
             var lcgentity = entitymeta.GetEntityClass(settings.LCG_Settings);
-            var lcgoptionset = attributemeta.GetNameTechnical(settings.LCG_Settings) + "_OptionSet";
+            var lcgoptionset = (attributemeta?.GetNameTechnical(settings.LCG_Settings) ?? entity) + "_OptionSet";
             var ebgentity = GetEntityName(entity);
             var ebgoptionset = enumattr != null ?
                 enumattr.OptionSet?.IsGlobal == true ?

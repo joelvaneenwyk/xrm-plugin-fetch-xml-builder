@@ -145,9 +145,9 @@ namespace Rappen.XTB.FetchXmlBuilder.Converters
                 }
                 if (linkitems.Count == 1)
                 {
-                    var nextlink = (FetchLinkEntityType)linkitems[0];
-                    linkentity = nextlink.name;
-                    attributeitems = nextlink.Items.Where(i => i is FetchAttributeType && ((FetchAttributeType)i).name != null).ToList();
+                    var nextLink = (FetchLinkEntityType)linkitems[0];
+                    linkentity = nextLink.name;
+                    attributeitems = nextLink.Items.Where(i => i is FetchAttributeType && ((FetchAttributeType)i).name != null).ToList();
                 }
             }
             if (attributeitems.Count > 0)
@@ -408,13 +408,13 @@ namespace Rappen.XTB.FetchXmlBuilder.Converters
                     }
                     if (linkitems.Count == 1)
                     {
-                        var nextlink = (FetchLinkEntityType)linkitems[0];
-                        if (nextlink.linktype == "outer")
+                        var nextLink = (FetchLinkEntityType)linkitems[0];
+                        if (nextLink.linktype == "outer")
                         {
                             throw new Exception("OData queries do not support outer joins");
                         }
-                        if (relation.Entity2LogicalName == nextlink.name &&
-                            relation.Entity2IntersectAttribute == nextlink.to)
+                        if (relation.Entity2LogicalName == nextLink.name &&
+                            relation.Entity2IntersectAttribute == nextLink.to)
                         {
                             return relation;
                         }
@@ -430,13 +430,13 @@ namespace Rappen.XTB.FetchXmlBuilder.Converters
                     }
                     if (linkitems.Count == 1)
                     {
-                        var nextlink = (FetchLinkEntityType)linkitems[0];
-                        if (nextlink.linktype == "outer")
+                        var nextLink = (FetchLinkEntityType)linkitems[0];
+                        if (nextLink.linktype == "outer")
                         {
                             throw new Exception("OData queries do not support outer joins");
                         }
-                        if (relation.Entity1LogicalName == nextlink.name &&
-                            relation.Entity1IntersectAttribute == nextlink.to)
+                        if (relation.Entity1LogicalName == nextLink.name &&
+                            relation.Entity1IntersectAttribute == nextLink.to)
                         {
                             return relation;
                         }

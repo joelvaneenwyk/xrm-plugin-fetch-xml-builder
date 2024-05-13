@@ -7,8 +7,8 @@ namespace Rappen.XTB.FetchXmlBuilder.AppCode
 {
     public static class Utils
     {
-        private static NameValueCollection commonparams = new NameValueCollection { { "utm_source", "FetchXMLBuilder" }, { "utm_medium", "XrmToolBox" } };
-        private static NameValueCollection microsoftparams = new NameValueCollection { { "WT.mc_id", "DX-MVP-5002475" } };
+        private static readonly NameValueCollection commonparams = new NameValueCollection { { "utm_source", "FetchXMLBuilder" }, { "utm_medium", "XrmToolBox" } };
+        private static readonly NameValueCollection microsoftparams = new NameValueCollection { { "WT.mc_id", "DX-MVP-5002475" } };
 
         public static string ProcessURL(string url)
         {
@@ -16,17 +16,21 @@ namespace Rappen.XTB.FetchXmlBuilder.AppCode
             {
                 return url;
             }
-            var urib = new UriBuilder(url);
-            var qry = HttpUtility.ParseQueryString(urib.Query);
-            if (urib.Host.ToLowerInvariant().Contains("microsoft.com"))
-            {
-                microsoftparams.AllKeys.ToList().ForEach(k => qry[k] = microsoftparams[k]);
-                urib.Path = urib.Path.Replace("/en-us/", "/");
-            }
-            commonparams.AllKeys.ToList().ForEach(k => qry[k] = commonparams[k]);
 
-            urib.Query = qry.ToString();
-            return urib.Uri.ToString();
+            var uriBuilder = new UriBuilder(url);
+            var queryString = HttpUtility.ParseQueryString(uriBuilder.Query);
+
+            if (uriBuilder.Host.ToLowerInvariant().Contains("microsoft.com"))
+            {
+                microsoftparams.AllKeys.ToList().ForEach(k => queryString[k] = microsoftparams[k]);
+                uriBuilder.Path = uriBuilder.Path.Replace("/en-us/", "/");
+            }
+
+            commonparams.AllKeys.ToList().ForEach(k => queryString[k] = commonparams[k]);
+
+            uriBuilder.Query = queryString.ToString();
+
+            return uriBuilder.Uri.ToString();
         }
     }
 }
