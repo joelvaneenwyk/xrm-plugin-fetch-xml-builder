@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Rappen.XTB.FetchXmlBuilder.AppCode;
 
 namespace FXBTests
@@ -18,28 +18,28 @@ namespace FXBTests
         [TestMethod]
         public void TestDocsUrl()
         {
-            var result = Utils.ProcessURL(docsUrl);
+            string result = Utils.ProcessURL(docsUrl);
             Assert.AreEqual(docsUrlResult, result);
         }
 
         [TestMethod]
         public void TestDocsUrlWithAnchor()
         {
-            var result = Utils.ProcessURL(docsUrlWithAnchor);
+            string result = Utils.ProcessURL(docsUrlWithAnchor);
             Assert.AreEqual(docsUrlWithAnchorResult, result);
         }
 
         [TestMethod]
         public void TestDocsUrlWithQueryAndAnchor()
         {
-            var result = Utils.ProcessURL(docsUrlWithQueryAndAnchor);
+            string result = Utils.ProcessURL(docsUrlWithQueryAndAnchor);
             Assert.AreEqual(docsUrlWithQueryAndAnchorResult, result);
         }
 
         [TestMethod]
         public void TestRandomUrl()
         {
-            var result = Utils.ProcessURL(randomUrl);
+            string result = Utils.ProcessURL(randomUrl);
             Assert.AreEqual(randomUrlResult, result);
         }
     }
